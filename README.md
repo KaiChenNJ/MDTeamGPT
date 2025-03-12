@@ -36,9 +36,3 @@ Code will be released soon. Stay tuned!
 ```bash
 # Code coming soon!
 
-@article{MDTeamGPT2025,
-  title={MDTeamGPT: A Self-Evolving LLM-based Multi-Agent Framework for Multi-Disciplinary Team Medical Consultation},
-  author={Anonymous},
-  journal={ACL Submission},
-  year={2025}
-}
