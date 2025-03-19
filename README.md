@@ -35,4 +35,16 @@ Code will be released soon. Stay tuned!
 
 ```bash
 # Code coming soon!
+```
 
+## Citation
+
+If you use MDTeamGPT in your research, please cite:
+
+```bibtex
+@article{chen2025mdteamgpt,
+  title={{MDTeamGPT: A Self-Evolving LLM-based Multi-Agent Framework for Multi-Disciplinary Team Medical Consultation}},
+  author={Kai Chen and Xinfeng Li and Tianpei Yang and Hewei Wang and Wei Dong and Yang Gao},
+  journal={arXiv preprint arXiv:2503.13856},
+  year={2025}
+}
