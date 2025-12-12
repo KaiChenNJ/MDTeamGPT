@@ -1,50 +1,52 @@
-# MDTeamGPT: A Self-Evolving LLM-based Multi-Agent Framework for Multi-Disciplinary Team Medical Consultation
+# MDTeamGPT 🏥
 
+**A Self-Evolving Multi-Agent Framework for Medical Multi-Disciplinary Team (MDT) Consultations.**
 
-## Introduction
+MDTeamGPT leverages Large Language Models (LLMs) to simulate a full medical consultation team. It mitigates context collapse in long dialogues using a **Residual Discussion Structure** and employs a **Self-Evolving Mechanism** via dual knowledge bases (CorrectKB & ChainKB) to accumulate medical experience.
 
-Large Language Models (LLMs) have made significant progress in various fields. However, challenges remain in Multi-Disciplinary Team (MDT) medical consultations. Current research enhances reasoning through role assignment, task decomposition, and accumulation of medical experience. Multi-role collaboration in MDT consultations often results in excessively long dialogue histories, increasing the model’s cognitive burden and degrading both efficiency and accuracy.
+## ✨ Key Features
 
-To address these challenges, we propose **MDTeamGPT**, a multi-agent MDT medical consultation framework based on LLMs. Our framework employs:
+  * **👨‍⚕️ Multi-Role Specialists:** Dynamically assigns specialists (e.g., Cardiologist, Neurologist) based on the patient case via a Primary Care Triage agent.
+  * **🧠 Context Engineering:** A **Lead Physician** agent synthesizes discussions into structured residual context (*Consistency, Conflict, Independence, Integration*) to reduce cognitive load.
+  * **🔄 Self-Evolution:**
+      * **CorrectKB:** Stores successful reasoning patterns.
+      * **ChainKB:** Stores reflection and error analysis from incorrect diagnoses.
+  * **🛡️ Safety & Ethics:** A dedicated reviewer ensures consensus convergence and output safety.
+  * **🛠️ External Tools:** Integrated Web Search and PubMed for evidence-based grounding.
 
-- **Consensus aggregation and residual discussion structures** for multi-round consultations.
-- **Correct Answer Knowledge Base (CorrectKB)** and **Chain-of-Thought Knowledge Base (ChainKB)** to accumulate consultation experience.
-- A self-evolving mechanism that enhances diagnosis rationality and accuracy.
+## 🚀 Quick Start
 
-## Features
+### 1\. Prerequisites
 
-- Multi-agent framework for **MDT medical consultations**.
-- Role-based **reasoning, task decomposition, and collaborative decision-making**.
-- Efficient knowledge retention via **CorrectKB and ChainKB**.
-- Continuous self-improvement and error reflection.
+  * Python 3.8+
+  * OpenAI API Key (or compatible endpoint like DashScope)
 
-## Experimental Results
-
-Our framework achieves **state-of-the-art** performance on benchmark datasets:
-
-| Dataset   | Accuracy |
-|-----------|---------:|
-| MedQA     | 90.1%    |
-| PubMedQA  | 83.9%    |
-
-The constructed knowledge bases demonstrate effective generalization across different test sets.
-
-## Installation
-
-Code will be released soon. Stay tuned!
+### 2\. Installation
 
 ```bash
-# Code coming soon!
+git clone https://github.com/KaiChenNJ/MDTeamGPT.git
+cd MDTeamGPT
+pip install -r requirements.txt
 ```
 
-## Citation
+### 3\. Run the System
 
-If you use MDTeamGPT in your research, please cite:
+```bash
+streamlit run app.py
+```
 
-```bibtex
-@article{chen2025mdteamgpt,
-  title={{MDTeamGPT: A Self-Evolving LLM-based Multi-Agent Framework for Multi-Disciplinary Team Medical Consultation}},
-  author={Kai Chen and Xinfeng Li and Tianpei Yang and Hewei Wang and Wei Dong and Yang Gao},
-  journal={arXiv preprint arXiv:2503.13856},
-  year={2025}
-}
+## 📂 Project Structure
+
+  * **`app.py`**: Main Streamlit interface for case entry, configuration, and visualization.
+  * **`workflow.py`**: LangGraph state machine defining the flow (Triage $\to$ Consultation $\to$ Safety Check).
+  * **`agents.py`**: Definitions for all agent roles, prompts, and strictly formatted outputs.
+  * **`knowledge_base.py`**: Manages vector storage (FAISS) for dual-memory experience retrieval.
+  * **`tools.py`**: Search and PubMed tool integrations.
+
+## 🎓 Training Mode
+
+1.  Toggle **Training Mode** in the UI.
+2.  Input the **Ground Truth** (Correct Answer).
+3.  The system automatically grades the consultation:
+      * **Correct:** Saves reasoning to `CorrectKB`.
+      * **Incorrect:** Performs Chain-of-Thought reflection and saves to `ChainKB`.
