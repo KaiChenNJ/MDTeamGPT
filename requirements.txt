@@ -1,0 +1,8 @@
+streamlit
+langchain
+langchain-openai
+langchain-community
+langgraph
+faiss-cpu
+duckduckgo-search
+xmltodict
