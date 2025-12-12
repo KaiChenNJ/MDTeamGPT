@@ -56,18 +56,3 @@ streamlit run app.py
       * **Correct:** Saves reasoning to `CorrectKB`.
       * **Incorrect:** Performs Chain-of-Thought reflection and saves to `ChainKB`.
   
-
-## 📄 License & Citation
-
-This project is released under the **MIT License**.
-
-If you use **MDTeamGPT** or its code in your research, please strictly adhere to the license terms and kindly cite our paper:
-
-```bibtex
-@article{chen2025mdteamgpt,
-  title={Mdteamgpt: A self-evolving llm-based multi-agent framework for multi-disciplinary team medical consultation},
-  author={Chen, Kai and Li, Xinfeng and Yang, Tianpei and Wang, Hewei and Dong, Wei and Gao, Yang},
-  journal={arXiv preprint arXiv:2503.13856},
-  year={2025}
-}
-```
